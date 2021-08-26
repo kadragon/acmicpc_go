@@ -22,5 +22,5 @@ func main() {
 	var n int
 	fmt.Fscan(rd, &n)
 
-	wr.WriteString(fmt.Sprintf("%s\n", "Hello World!"))
+	fmt.Fprintf(wr, "%s\n", "Hello World!")
 }
