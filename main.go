@@ -11,16 +11,14 @@ var (
 	wr *bufio.Writer
 )
 
-func init() {
+func main() {
 	rd = bufio.NewReader(os.Stdin)
 	wr = bufio.NewWriter(os.Stdout)
-}
 
-func main() {
 	defer wr.Flush()
 
 	var n int
 	fmt.Fscan(rd, &n)
 
-	fmt.Fprintf(wr, "%s\n", "Hello World!")
+	fmt.Fprintf(wr, "%d\n", n)
 }
