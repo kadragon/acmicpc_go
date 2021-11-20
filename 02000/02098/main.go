@@ -25,7 +25,7 @@ func init() {
 	MAX = 17000000
 }
 
-func TSP(visit int64, now int) int {
+func TSP(visit int, now int) int {
 	visit |= (1 << now)
 
 	if visit == (1<<n)-1 {
@@ -39,7 +39,7 @@ func TSP(visit int64, now int) int {
 		dt[visit][now] = MAX
 
 		for i := 0; i < n; i++ {
-			if i != now && (visit&(1<<i)) == 0 && d[now][i] > 0 {
+			if (visit&(1<<i)) == 0 && d[now][i] > 0 {
 				tmp := TSP(visit, i) + d[now][i]
 				if dt[visit][now] > tmp {
 					dt[visit][now] = tmp
