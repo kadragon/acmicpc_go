@@ -11,10 +11,9 @@ var (
 	rd *bufio.Reader
 	wr *bufio.Writer
 
-	t   string
-	s   []string
-	n   int
-	ans int
+	t string
+	s []string
+	n int
 )
 
 func main() {
