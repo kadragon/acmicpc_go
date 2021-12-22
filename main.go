@@ -7,10 +7,14 @@ import (
 	"strconv"
 )
 
-var sc = bufio.NewScanner(os.Stdin)
-var wr = bufio.NewWriter(os.Stdout)
+var (
+	sc *bufio.Scanner
+	wr *bufio.Writer
+)
 
 func main() {
+	sc = bufio.NewScanner(os.Stdin)
+	wr = bufio.NewWriter(os.Stdout)
 	defer wr.Flush()
 
 	n := nextInt()
