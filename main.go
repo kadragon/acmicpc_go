@@ -11,9 +11,12 @@ var (
 	wr *bufio.Writer
 )
 
-func main() {
+func init() {
 	rd = bufio.NewReader(os.Stdin)
 	wr = bufio.NewWriter(os.Stdout)
+}
+
+func main() {
 	defer wr.Flush()
 
 	var n int
