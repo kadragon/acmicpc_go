@@ -15,7 +15,8 @@ var (
 	rd *bufio.Reader
 	wr *bufio.Writer
 
-	d [][]node
+	d  [][]node
+	dt []int
 )
 
 func init() {
@@ -32,13 +33,17 @@ func max(a, b int) int {
 }
 
 func bfs(s int) int {
-	m := 0
+	if dt[s] == 0 {
+		m := 0
 
-	for i := 0; i < len(d[s]); i++ {
-		m = max(m, d[s][i].cost+bfs(d[s][i].next))
+		for i := 0; i < len(d[s]); i++ {
+			m = max(m, d[s][i].cost+bfs(d[s][i].next))
+		}
+
+		dt[s] = m
 	}
 
-	return m
+	return dt[s]
 }
 
 func main() {
@@ -48,6 +53,7 @@ func main() {
 	fmt.Fscan(rd, &n)
 
 	d = make([][]node, n+1)
+	dt = make([]int, n+1)
 
 	var s, e, c int
 
