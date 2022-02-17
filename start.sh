@@ -21,13 +21,7 @@ else
     e="$1"
 fi
 
-if [ -d "$d" ]
-then
-    echo "Sub Folder Exist!"
-else
-    mkdir ./"$d"
-fi
-mkdir ./"$d"/"$e"
+mkdir -p ./"$d"/"$e"
 
 cp ./main.go ./"$d"/"$e"/main.go
 touch ./"$d"/"$e"/input.txt
