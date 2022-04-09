@@ -9,7 +9,7 @@
             "command": "go",
             "args": [
                 "run",
-                "${file}",
+                "${fileDirname}/main.go",
                 "<",
                 "${fileDirname}/input.txt"
             ],
