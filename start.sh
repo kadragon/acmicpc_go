@@ -24,4 +24,10 @@ fi
 mkdir -p ./"$d"/"$e"
 
 cp ./main.go ./"$d"/"$e"/main.go
-touch ./"$d"/"$e"/input.txt
+
+# touch ./"$d"/"$e"/input.txt
+## input content parsing
+go run ./parser/main.go $1
+
+## vscode --reuse-window
+code -r ./"$d"/"$e"/main.go
