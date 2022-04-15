@@ -9,3 +9,4 @@ fi
 
 git add .
 git commit -m "$e solve"
+git push
