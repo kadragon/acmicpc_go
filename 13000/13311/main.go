@@ -7,12 +7,10 @@ import (
 )
 
 var (
-	rd *bufio.Reader
 	wr *bufio.Writer
 )
 
 func init() {
-	rd = bufio.NewReader(os.Stdin)
 	wr = bufio.NewWriter(os.Stdout)
 }
 
