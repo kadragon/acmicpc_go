@@ -30,4 +30,5 @@ cp ./main.go ./"$d"/"$e"/main.go
 go run ./parser/main.go $1
 
 ## vscode --reuse-window
+code -r ./"$d"/"$e"/input.txt
 code -r ./"$d"/"$e"/main.go
