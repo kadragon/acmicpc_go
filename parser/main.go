@@ -7,7 +7,7 @@ import (
 	"github.com/gocolly/colly"
 )
 
-var rootDir string = "/Users/kdo/Dev/acmicpc_go/"
+var rootDir string = "/Users/kadragon/Dev/acmicpc_go/"
 
 func main() {
 	args := os.Args[1:]
@@ -48,26 +48,13 @@ func writeFile(pid, example string) error {
 		return err
 	}
 
-	defer f.Close()
-
 	f.WriteString(example)
 	f.Sync()
 
+	defer f.Close()
+
 	return nil
 }
-
-// func copyFile(pid string) {
-
-// 	in, _ := os.Open(rootDir + "main.go")
-// 	defer in.Close()
-
-// 	out, _ := os.Create(targetDir(pid) + "/main.go")
-// 	defer out.Close()
-
-// 	io.Copy(out, in)
-
-// 	out.Sync()
-// }
 
 func targetDir(pid string) string {
 	if len(pid) == 4 {
